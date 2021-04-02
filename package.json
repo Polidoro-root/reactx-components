@@ -2,8 +2,34 @@
   "name": "reactx-components",
   "version": "1.0.0",
   "description": "A set of extensible react components. The components are already to working, you just need to style them.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "repository": "https://github.com/Polidoro-root/reactx-components.git",
   "author": "Polidoro-root <jv.polidoro@outlook.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack serve --progress --inline --hot --port 8080",
+    "build": "cross-env NODE_ENV=production babel src --out-dir dist"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.3.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "tiny-emitter": "^2.1.0",
+    "webpack": "^5.30.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {},
+  "files": [
+    "dist",
+    "README.MD"
+  ]
 }
