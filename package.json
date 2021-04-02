@@ -1,0 +1,9 @@
+{
+  "name": "reactx-components",
+  "version": "1.0.0",
+  "description": "A set of extensible react components. The components are already to working, you just need to style them.",
+  "main": "index.js",
+  "repository": "https://github.com/Polidoro-root/reactx-components.git",
+  "author": "Polidoro-root <jv.polidoro@outlook.com>",
+  "license": "MIT"
+}
