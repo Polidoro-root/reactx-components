@@ -12,7 +12,7 @@ function ModalFactory() {
 
   const [state, setState] = useState({
     isActive: false,
-    Component: () => <div></div>,
+    Component: () => <div>Teste</div>,
     props: {},
     width: DEFAULT_WIDTH
   })
@@ -24,17 +24,18 @@ function ModalFactory() {
         ...state,
         Component: payload.Component,
         props: payload.props,
-        width: payload.width ?? DEFAULT_WIDTH
+        width: payload.width ?? DEFAULT_WIDTH,
+        isActive: payload.status
       })
     } else {
       setState({
         ...state,
         Component: () => <div></div>,
         props: {},
-        width: DEFAULT_WIDTH
+        width: DEFAULT_WIDTH,
+        isActive: payload.status
       })
     }
-    setState({ ...state, isActive: payload.status })
   }
   
   useEffect(() => {
@@ -46,7 +47,7 @@ function ModalFactory() {
   }, [])
 
   return createPortal(
-    state.isActive ?
+    state.isActive && 
     <div
       id="modal"
       style={{
@@ -63,6 +64,7 @@ function ModalFactory() {
       }}
       onClick={() => handleModalToggle({ status: false })}
     >
+      {console.log('STATE', <state.Component />)}
       <div
         style={{
           position: 'fixed',
@@ -91,8 +93,6 @@ function ModalFactory() {
         </div>
       </div>
     </div>
-    :
-    <div></div>
     , body
   )
 }
